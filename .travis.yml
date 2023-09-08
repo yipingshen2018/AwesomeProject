@@ -1,0 +1,40 @@
+//write a CI script to build and run Detox tests for your project based on travis CI
+//https://docs.travis-ci.com/user/languages/javascript-with-nodejs/
+//https://docs.travis-ci.com/user/customizing-the-build/
+//https://docs.travis-ci.com/user/deployment/npm/
+//https://docs.travis-ci.com/user/deployment/heroku/
+//https://docs.travis-ci.com/user/deployment/script/
+//https://docs.travis-ci.com/user/deployment/releases/
+//https://docs.travis-ci.com/user/deployment/s3/
+//https://docs.travis-ci.com/user/deployment/elasticbeanstalk/
+//https://docs.travis-ci.com/user/deployment/openshift/
+//https://docs.travis-ci.com/user/deployment/azure-web-apps/
+//https://docs.travis-ci.com/user/deployment/lambda/
+//write detox test CI script for travis CI
+language: objective-c
+osx_image: xcode14.3.1
+
+branches:
+  only:
+    - main
+
+env:
+  global:
+    - NODE_VERSION=stable
+
+install:
+  - brew tap wix/brew
+  - brew install applesimutils
+  - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+  - export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+  - nvm install $NODE_VERSION
+  - nvm use $NODE_VERSION
+  - nvm alias default $NODE_VERSION
+
+  - npm install -g react-native-cli
+  - npm install -g detox-cli
+  - npm install
+  - cd ios; pod install; cd -;
+
+script:
+  - npm run e2e:ci
