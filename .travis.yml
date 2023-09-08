@@ -1,15 +1,5 @@
-//write a CI script to build and run Detox tests for your project based on travis CI
-//https://docs.travis-ci.com/user/languages/javascript-with-nodejs/
-//https://docs.travis-ci.com/user/customizing-the-build/
-//https://docs.travis-ci.com/user/deployment/npm/
-//https://docs.travis-ci.com/user/deployment/heroku/
-//https://docs.travis-ci.com/user/deployment/script/
-//https://docs.travis-ci.com/user/deployment/releases/
-//https://docs.travis-ci.com/user/deployment/s3/
-//https://docs.travis-ci.com/user/deployment/elasticbeanstalk/
-//https://docs.travis-ci.com/user/deployment/openshift/
-//https://docs.travis-ci.com/user/deployment/azure-web-apps/
-//https://docs.travis-ci.com/user/deployment/lambda/
+#write a CI script to build and run Detox tests for your project based on travis CI
+#https://docs.travis-ci.com/user/languages/javascript-with-nodejs/
 
 language: objective-c
 osx_image: xcode14.3.1
