@@ -12,7 +12,7 @@
 //https://docs.travis-ci.com/user/deployment/lambda/
 
 language: objective-c
-osx_image: xcode14.2
+osx_image: xcode14.3.1
 
 branches:
   only:
