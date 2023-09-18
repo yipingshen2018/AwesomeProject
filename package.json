@@ -8,10 +8,9 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "e2e:test": "detox test -c ios.release",
-    "e2e:build": "detox build -c ios.release",
+    "e2e:test": "detox test -c ios.sim.release",
+    "e2e:build": "detox build -c ios.sim.release",
     "e2e:ci": "npm run e2e:build && npm run e2e:test -- --cleanup"
- 
   },
   "dependencies": {
     "randomcolor": "^0.6.2",
@@ -30,6 +29,7 @@
     "@types/react-test-renderer": "^18.0.0",
     "babel-jest": "^29.2.1",
     "detox": "^20.11.4",
+    "detox-recorder": "^1.0.151",
     "eslint": "^8.19.0",
     "jest": "^29.6.4",
     "metro-react-native-babel-preset": "0.76.8",
